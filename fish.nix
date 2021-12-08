@@ -7,6 +7,7 @@
       ll = "exa -al --icons";
       ls = "exa --icons";
       la = "exa -lag";
+      nix-shell = "nix-shell --command fish";
     };
     interactiveShellInit = ''
       # key bindings
