@@ -16,13 +16,28 @@
         bind -M insert -m default jj backward-char force-repaint
       end
 
-			set fish_color_command white
+      set fish_color_command white
 
-			# Set the env for fzf
-			set -gx FZF_DEFAULT_OPTS '--height 40% --reverse --border'
-			set -gx FZF_DEFAULT_COMMAND 'ag -a --ignore .git -g ""'
+      # Set the env for fzf
+      set -gx FZF_DEFAULT_OPTS '--height 40% --reverse --border'
+      set -gx FZF_DEFAULT_COMMAND 'ag -a --ignore .git -g ""'
 
-			zoxide init fish | source
+      zoxide init fish | source
+
+	  if test -n "$IN_NIX_SHELL"
+		function fish_prompt
+		  set -l nix_shell_info (
+			if test -n "$IN_NIX_SHELL"
+			  echo -n "<nix-shell> "
+			end
+		  )
+
+		  set_color $fish_color_cwd
+		  echo -n (prompt_pwd)
+		  set_color normal
+		  echo -n -s " $nix_shell_info ~>"
+		end
+	  end
     '';
     plugins = [
       {
