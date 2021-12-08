@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  npm-global = "$HOME/.npm-global";
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -10,6 +13,11 @@
     EDITOR = "nvim";
     SUDO_EDITOR= "/home/anosatsuk124/.nix-profile/bin/nvim";
   };
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "${npm-global}/bin"
+  ];
 
   imports = [
     ./tmux.nix
@@ -33,6 +41,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    file
     htop
     simple-http-server
     bat
@@ -50,4 +59,10 @@
     xsel
     tig
   ];
+
+  home.activation = {
+    npmSetPrefix = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      $DRY_RUN_CMD npm set prefix $VERBOSE_ARG ${npm-global}
+    '';
+  };
 }
