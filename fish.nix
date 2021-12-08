@@ -17,34 +17,34 @@
 
 			zoxide init fish | source
     '';
-		plugins = [
-			{
-				name = "bass";
-				src = pkgs.fetchFromGitHub {
-					owner = "edc";
-					repo = "bass";
-					rev = "v1.0";
-					sha256 = "XpB8u2CcX7jkd+FT3AYJtGwBtmNcLXtfMyT/z7gfyQw=";
-				};
-			}
-			{
-				name = "fzf";
-				src = pkgs.fetchFromGitHub {
-					owner = "jethrokuan";
-					repo = "fzf";
-					rev = "master";
-					sha256 = "28QW/WTLckR4lEfHv6dSotwkAKpNJFCShxmKFGQQ1Ew=";
-				};
-			}
-			{
-				name = "theme-lambda";
-				src = pkgs.fetchFromGitHub {
-					owner = "hasanozgan";
-					repo = "theme-lambda";
-					sha256 = "ZoyQfwqeQUFOP49Ebyel7TQUzEwD+HreZNFFYo/ICKs=";
-					rev = "master";
-				};
-			}
-		];
+    plugins = [
+      {
+        name = "bass";
+        src = pkgs.fetchFromGitHub {
+          owner = "edc";
+          repo = "bass";
+          rev = "v1.0";
+          sha256 = "XpB8u2CcX7jkd+FT3AYJtGwBtmNcLXtfMyT/z7gfyQw=";
+        };
+      }
+      {
+        name = "fzf";
+        src = pkgs.fetchFromGitHub {
+          owner = "jethrokuan";
+          repo = "fzf";
+          rev = "master";
+          sha256 = "28QW/WTLckR4lEfHv6dSotwkAKpNJFCShxmKFGQQ1Ew=";
+        };
+      }
+      {
+        name = "theme-lambda";
+        src = pkgs.fetchFromGitHub {
+          owner = "hasanozgan";
+          repo = "theme-lambda";
+          sha256 = "ZoyQfwqeQUFOP49Ebyel7TQUzEwD+HreZNFFYo/ICKs=";
+          rev = "master";
+        };
+      }
+    ];
   };
 }
