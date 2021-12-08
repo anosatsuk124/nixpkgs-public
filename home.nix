@@ -15,6 +15,7 @@
     ./tmux.nix
     ./neovim.nix
     ./fish.nix
+    ./git.nix
   ];
 
   # This value determines the Home Manager release that your
@@ -33,7 +34,6 @@
   home.packages = with pkgs; [
     bat
     exa
-    git
     jq
     nix-prefetch-github
     nodejs-16_x
@@ -45,5 +45,6 @@
     fzf
     ripgrep
     xsel
+    tig
   ];
 }
