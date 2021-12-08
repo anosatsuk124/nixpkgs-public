@@ -16,6 +16,7 @@
     ./neovim.nix
     ./fish.nix
     ./git.nix
+    ./direnv.nix
   ];
 
   # This value determines the Home Manager release that your

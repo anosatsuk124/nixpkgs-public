@@ -2,6 +2,12 @@
 {
   programs.fish = {
     enable = true;
+    shellAliases = {
+      tree = "ls -T";
+      ll = "exa -al --icons";
+      ls = "exa --icons";
+      la = "exa -lag";
+    };
     interactiveShellInit = ''
       # key bindings
       function fish_user_key_bindings
