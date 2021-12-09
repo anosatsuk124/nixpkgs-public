@@ -49,6 +49,9 @@ in
     jq
     nix-prefetch-github
     nodejs-16_x
+    python39
+    python39Packages.pip
+    pipenv
     zoxide
     ag
     curl
