@@ -10,8 +10,9 @@ in
   home.homeDirectory = "/home/anosatsuk124";
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "nvr -cc split --remote-wait-silent";
     SUDO_EDITOR= "/home/anosatsuk124/.nix-profile/bin/nvim";
+    NVIM_LISTEN_ADDRESS = "127.0.0.1:9999";
   };
 
   home.sessionPath = [

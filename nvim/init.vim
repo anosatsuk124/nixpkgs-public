@@ -7,6 +7,9 @@ set smartindent
 inoremap <silent> jj <ESC>
 set completeopt=noselect,noinsert
 
+" config for neovim-remote
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
+
 " Compiling when saved
 
 
